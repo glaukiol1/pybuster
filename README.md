@@ -1,4 +1,4 @@
-# pybuster v1.0
+# pybuster v1.1
 
 pybuster is a tool that is used to brute-force URLs of web servers.
 
@@ -17,7 +17,7 @@ pybuster is a tool that is used to brute-force URLs of web servers.
 usage: pybuster.py mode [-h] --wordlist WORDLIST --threads THREADS --url URL [--success SUCCESS]
 
 positional arguments:
-  mode                 Mode to run pybuster [dir,dns]
+  mode                 Mode to run pybuster [dir,subdomain]
 
 optional arguments:
   -h, --help           show this help message and exit
@@ -35,6 +35,14 @@ The gobuster tool might be overall quicker, and it might be better in other fiel
 - It uses pip3 for modules, and it only requires one, *requests*, which is already installed in most systems
 - It is easier to understand python code over go code, when you aren't a programmer, thus you can easily edit this.
 - Faster setup, you dont need to install golang, you can start it directly.
+
+## Changes in v1.1
+Features below, +;
+- Added subdomain search mode
+- Changed cli usage, changed "dns" to "subdomain"
+- Use python3 pybuster.py *subdomain* to start to scan for subdomains
+- The url shall not change, do not try to do *https://PYBUSTER.url.com*, this will break the tool, it will automatically do that, just write out the URL normally, like; https://url.com.
+- Minor changes to outputting
 
 ## Changes in v1.0
 First stable release, with main features, +:
