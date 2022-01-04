@@ -44,8 +44,8 @@ by Glaukio L (@glaukiol1) | Inspired by gobuster
 """)
 from threading import Thread
 
-import script
-import splittingt
+import src.script as script
+import src.splittingt as splittingt
 pipe = {"found": 0, "dirs": [], "total_done": 0, "errors": 0, "total": wordlist.__len__(), "run": True}
 ts = []
 def main():
