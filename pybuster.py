@@ -3,7 +3,7 @@ import time
 
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument('mode', type=str, help="Mode to run pybuster [dir,dns]")
+parser.add_argument('mode', type=str, help="Mode to run pybuster [dir,subdomain]")
 parser.add_argument('--wordlist', type=str, required=True, help="Full path to wordlist")
 parser.add_argument('--threads', type=int, required=True, help="Number of threads to use")
 parser.add_argument('--url', type=str, required=True, help="URL to check")
@@ -50,7 +50,7 @@ pipe = {"found": 0, "dirs": [], "total_done": 0, "errors": 0, "total": wordlist.
 ts = []
 def main():
     for x in range(threads):
-        Thread(target=script._run,args=(splittingt.main(wordlist,threads)[x],url,s,pipe,x)).start()
+        Thread(target=script._run,args=(splittingt.main(wordlist,threads)[x],url,s,pipe,x,mode)).start()
 if __name__  == '__main__':
     main()
     starttime = time.time()
