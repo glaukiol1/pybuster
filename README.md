@@ -1,6 +1,6 @@
 # pybuster v1.0
 
-pybuster is a tool that is used to brute-force URIs on web servers.
+pybuster is a tool that is used to brute-force URLs of web servers.
 
 ## Features
 
