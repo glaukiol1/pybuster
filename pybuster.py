@@ -1,14 +1,25 @@
 import sys
 import time
 
-w = sys.argv[1]
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('mode', type=str, help="Mode to run pybuster [dir,dns]")
+parser.add_argument('--wordlist', type=str, required=True, help="Full path to wordlist")
+parser.add_argument('--threads', type=int, required=True, help="Number of threads to use")
+parser.add_argument('--url', type=str, required=True, help="URL to check")
+parser.add_argument('--success', type=str, required=False, help="Success status codes, split by comma [optional]")
+args = parser.parse_args()
+
+w = args.wordlist
 with open(w, 'r') as file:
     wordlist = file.read().splitlines()
-url = sys.argv[2]
+url = args.url
 
-threads = int(input("#> Threads: "))
+mode = args.mode
 
-s = sys.argv[3]
+threads = args.threads
+
+s = args.success or '200'
 
 lcltime = time.localtime()
 
@@ -19,7 +30,7 @@ print(f"""
 PyBuster
 by Glaukio L (@glaukiol1) | Inspired by gobuster
 ===============================================================
-[+] Mode         : dir
+[+] Mode         : {mode}
 [+] Url/Domain   : {url}
 [+] Wordlist     : {w}
 [+] Status codes : {s}
