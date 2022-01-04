@@ -23,25 +23,25 @@ s = args.success or '200'
 
 lcltime = time.localtime()
 
-out_time = f"{lcltime.tm_hour}:{lcltime.tm_min}" 
+out_time = f"{lcltime.tm_year}/{lcltime.tm_mon}/{lcltime.tm_mday} {lcltime.tm_hour}:{lcltime.tm_min}:{lcltime.tm_sec}" 
 
 print(f"""
-===============================================================
-PyBuster
-by Glaukio L (@glaukiol1) | Inspired by gobuster
-===============================================================
+#gobuster start; newlines; \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+{"="*66}
+PyBuster                                                         
+by Glaukio L (@glaukiol1) | Inspired by gobuster                 
+{"="*66}
 [+] Mode         : {mode}
 [+] Url/Domain   : {url}
 [+] Wordlist     : {w}
 [+] Status codes : {s}
 [+] Threads:     : {threads}
-===============================================================
-#> data             Output pybuster data
-#> exit             Exit out all the threads & exit main instance
-===============================================================
+{"="*66}
 {out_time} Starting pybuster
-
-""")
+{"="*66}
+Press Enter to exit out all the threads
+{"="*66}"""
+)
 from threading import Thread
 
 import src.script as script
@@ -54,24 +54,22 @@ def main():
 if __name__  == '__main__':
     main()
     starttime = time.time()
-    print(f'[+] {time.localtime().tm_hour}:{time.localtime().tm_min}: pybuster threads started')
-    while True:
-        m = input("#> ")
-        if m == 'data':
-            print(f"Dir's Tested: {pipe['total_done']}/{pipe['total']} | Dir's Found: {pipe['found']} | Hard Errors: {pipe['errors']} | Time: {int(time.time()-starttime)} seconds")
-        if m == 'exit':
-            pipe["run"] = False
-            break
-    print(f"""
-    \n
-===============================================================
+    lcltime = time.localtime()
+
+    out_time = f"{lcltime.tm_year}/{lcltime.tm_mon}/{lcltime.tm_mday} {lcltime.tm_hour}:{lcltime.tm_min}:{lcltime.tm_sec}" 
+    print(f'{out_time} pybuster threads started\n{"="*66}')
+    input("")
+    pipe["run"] = False
+    lcltime = time.localtime()
+    out_time = f"{lcltime.tm_year}/{lcltime.tm_mon}/{lcltime.tm_mday} {lcltime.tm_hour}:{lcltime.tm_min}:{lcltime.tm_sec}" 
+    print(f"""{"="*66}
 Directories checked: {pipe["total_done"]}/{pipe["total"]} (total)
 Directories found: {pipe["found"]}
 Hard errors: {pipe["errors"]}
 Time: {int(time.time()-starttime)} seconds
-Directory URLs that were found:
-===============================================================
-    {pipe["dirs"]}
-    """)
+{"="*66}
+{out_time} Finished                      
+{"="*66}
+""")
     print("Quitting all instances, you may do CTRL+C to speed this up")
     sys.exit()

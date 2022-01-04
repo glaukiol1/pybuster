@@ -11,6 +11,22 @@ pybuster is a tool that is used to brute-force URIs on web servers.
 - Custom success status code selection
 - Custom wordlist selection
 
+## Command Line Usage
+
+```txt
+usage: pybuster.py mode [-h] --wordlist WORDLIST --threads THREADS --url URL [--success SUCCESS]
+
+positional arguments:
+  mode                 Mode to run pybuster [dir,dns]
+
+optional arguments:
+  -h, --help           show this help message and exit
+  --wordlist WORDLIST  Full path to wordlist
+  --threads THREADS    Number of threads to use
+  --url URL            URL to check
+  --success SUCCESS    Success status codes, split by comma [optional]
+```
+
 ## Why should i use this over [gobuster](https://github.com/OJ/gobuster)?
 
 The gobuster tool might be overall quicker, and it might be better in other fields, but;
