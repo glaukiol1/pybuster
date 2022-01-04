@@ -1,4 +1,4 @@
-# pybuster v0.0.1
+# pybuster v0.1.0
 
 pybuster is a tool that is used to brute-force URIs on web servers.
 
@@ -8,6 +8,11 @@ The gobuster tool might be overall quicker, and it might be better in other fiel
 - It uses pip3 for modules, and it only requires one, *requests*, which is already installed in most systems
 - It is easier to understand python code over go code, when you aren't a programmer, thus you can easily edit this.
 - Faster setup, you dont need to install golang, you can start it directly.
+
+## Changes in v0.1.0
+- Can select mode (still only dir mode is fully supported)
+- used python argparse module for cleaner commandline arguments
+- URL pattern to replace, you can put PYBUSTER in the URL, and it will replace it with the current wordlist item. Example: http://PYBUSTER.glaukio.com/ (do NOT put PYBUSTER in the end of the URL, for example; /PYBUSTER, it will start checking the URL like this; /wordlist_item/wordlist_item!)
 
 ## Changes in v0.0.1
 - Added base files
