@@ -1,6 +1,6 @@
-# pybuster v0.1.0
+# pybuster v1.0
 
-pybuster is a tool that is used to brute-force URIs on web servers.
+pybuster is a tool that is used to brute-force URLs of web servers.
 
 ## Features
 
@@ -35,6 +35,18 @@ The gobuster tool might be overall quicker, and it might be better in other fiel
 - It uses pip3 for modules, and it only requires one, *requests*, which is already installed in most systems
 - It is easier to understand python code over go code, when you aren't a programmer, thus you can easily edit this.
 - Faster setup, you dont need to install golang, you can start it directly.
+
+## Changes in v1.0
+First stable release, with main features, +:
+
+- Clean outputting
+- Easy exiting out of threads
+- Cleaner display of found URLs/URIs
+- Time formatting better, still need to modify a small thing, when time is 1am, 5 minutes, it will show 1:5, but it should show 01:05.
+- Mode still not changing anything, although you can use pattern to check for subdomains and other things
+- Slightly modified src/script.py to make it less CPU intensive, so more threads can run.
+- Exiting only requires you to press enter
+- Cleaner exiting summary.
 
 ## Changes in v0.1.0
 
